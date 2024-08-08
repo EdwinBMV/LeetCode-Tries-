@@ -1,0 +1,23 @@
+/** This is my solution to a problem from LeetCode.com titled Palindrome Number. The description is as follows:
+"Given an integer x, return true if x is a palindrome, and false otherwise."
+*/
+
+public static void main(String[] args) {
+        int x = 293;
+        System.out.println(isPalindrome(x));
+    }
+
+//Solution below.
+
+public static boolean isPalindrome(int x) {
+        String y = Integer.toString(x);
+        String yRev = "";
+        for(int i = y.length()-1; i >= 0; i--){
+            yRev += y.charAt(i);
+        }
+        if(y.equals(yRev)){
+            return true;
+        }
+        return false;
+    }
+}
