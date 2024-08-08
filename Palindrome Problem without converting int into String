@@ -1,0 +1,21 @@
+/** Another solution for the Palindrome problem without the need of converting the integer into a String */
+
+public static void main(String[] args) {
+        int x = 202;
+        System.out.println(isPalindrome(x));
+    }
+
+public static boolean isPalindrome(int x) {
+        int y = x;
+        int yRev = 0;
+
+        while(x > 0){
+            yRev = yRev * 10 + x % 10; //this will reverse the number.
+            x = x / 10; //this will decrease the number until it reaches 0.
+        }
+
+        if(y == yRev){
+            return true;
+        }
+        return false;
+    }
