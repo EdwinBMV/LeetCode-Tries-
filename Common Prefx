@@ -1,0 +1,28 @@
+/** Longest Common Prefix problem from LeetCode.com
+"Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string "" ".
+*/
+
+public class CommonPrefx {
+    public static void main(String[] args) {
+        String[] names = {"Edwin", "Edward", "Edmond"};
+        System.out.println(findPrefx(names));
+    }
+
+    //Solution below. 
+
+    public static String findPrefx(String[] name){
+        String Prefx = name[0];
+
+        for(int i = 1; i < name.length; i++){
+            while(name[i].indexOf(Prefx) != 0){
+                Prefx = Prefx.substring(0, Prefx.length() - 1); //remove last character until it matches the letters of the word is being compared against.
+
+                if(Prefx.isEmpty()){
+                    return "";
+                }
+            }
+
+        }
+        return Prefx;
+    }
+}
