@@ -1,0 +1,51 @@
+/** Roman to Int problem from LeetCode.com
+"Given a roman numeral, convert it to an integer."
+*/
+
+public class romanToInteger {
+    public static void main(String[] args) {
+        String roman = "XIV";
+        System.out.println(romanToInt(roman));
+    }
+  
+    //SOLUTION BELOW
+    public static int romanToInt(String s){
+        int result = 0;
+        int previousVal = 0;
+
+        for (int i = s.length() - 1; i >= 0; i--){
+            int currentVal = convert(s.charAt(i));
+
+            if(currentVal < previousVal){
+                result -= currentVal;
+            }
+            else{
+                result += currentVal;
+            }
+            previousVal = currentVal;
+        }
+        
+        return result;
+    }
+
+    public static int convert(char roman){
+        switch(roman){
+            case'I':
+                return 1;
+            case'V':
+                return 5;
+            case'X':
+                return 10;
+            case 'L':
+                return 50;
+            case 'C':
+                return 100;
+            case 'D':
+                return 500;
+            case 'M':
+                return 1000;
+            default: 
+                return 0;
+        }
+      }
+    }
